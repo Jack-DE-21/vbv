@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Template Exercise 2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #050c24;
+      color: white;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .card {
+      flex: 0 0 300px;
+      margin: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+      transition: 0.3s;
+    }
+
+    .card img {
+      max-width: 1000;
+      padding-top: 10%;
+
+    }
+
+    .card .text {
+      padding: 0 20px 10px;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+    }
+
+    #card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #outer {
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+    }
+
+    .inner {
+      display: flex;
+      gap: 1em;
+      justify-content: space-between;
+    }
+
+    .inner span {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Welcome to My Website</h1>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="data.html">CATEGORICAL FIGHTERS</a>
+        <a href="about.html">ABOUT</a>
+        <a href="handlebars.html">HANDLEBARS</a>
+        <a href="commenst.html">COMMENTS</a>
+    </nav>
+  </header>
+
+  <div id="card-container"></div>
+
+  <!-- Handlebars Template -->
+  <script id="exercise-2" type="text/x-handlebars-template">
+    {{#each this}}
+      <div class="card">
+        <img src="{{image}}" alt="{{make}} {{model}}">
+        <div class="text">
+          <h2>{{make}} {{model}}</h2>
+          <p>{{detail}}</p>
+          <div id="outer">
+            <div class="inner">
+              <span><i class="fa fa-calendar"></i> {{year}}</span>
+              <span><i class="fa fa-paint-brush"></i> {{colour}}</span>
+            </div>
+            <div class="inner">
+              <span><i class="fa fa-tachometer"></i> {{kms}} km</span>
+              <span><i class="fa fa-car"></i> {{style}}</span>
+            </div>
+          </div>
+          <p><i class="fa fa-eur"></i> {{price}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </script>
+
+  <!-- JavaScript to Render Multiple Aircraft -->
+  <script>
+    const aircraftArray = [
+      {
+        make: 'F-22 RAPTOR',
+        model: 'B-2',
+        detail: 'ANTIRADAR AIR DOMINANCE | AIR-TO-AIR & AIR-TO-GROUND',
+        colour: 'ANTI-RADAR GREY',
+        image: 'images/F-22-Raptor-Stealth-Fighter.jpg',
+        kms: '2400',
+        year: 1990,
+        price: '$70m',
+        style: 'AIR-DOMINANCE',
+      },
+      {
+        make: 'EUROFIGHTER',
+        model: 'TYPHOON',
+        detail: 'MULTI-ROLE | HIGH SPEED, SUPER AGILITY, MISSION FLEXIBLE',
+        colour: 'STORM GREY',
+        image: 'images/euro typhoon.jpeg',
+        kms: '1500',
+        year: 2003,
+        price: '$90m',
+        style: 'MULTI-ROLE',
+      }
+    ];
+
+    const source = document.getElementById("exercise-2").innerHTML;
+    const template = Handlebars.compile(source);
+    const compiledHtml = template(aircraftArray);
+    document.getElementById("card-container").innerHTML = compiledHtml;
+  </script>
+
+</body>
+
+
+
+<footer>
+       
+    <p>© 2025 Bolu Onafeso. All rights reserved.</p>
+</footer>
+</html>

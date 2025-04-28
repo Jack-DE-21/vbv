@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATEGORICAL FIGHTERS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>CATEGORICAL FIGHTERS</h1>
+        <nav>
+            
+            <a href="index.html">HOME</a>
+            <a href="data.html">CATEGORICAL FIGHTERS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="handlebars.html">HANDLEBARS</a>
+            <a href="commenst.html">COMMENTS</a>
+             
+        </nav>
+    </header>
+
+    <main>
+        <h2>Jets</h2>
+        <input type="text" id="searchInput" placeholder="Search by name"> 
+        <button onclick="searchData()">Search</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="dataTable"></tbody>
+        </table>
+
+        <h3>Add New Fighter</h3>
+        <input type="text" id="nameInput" placeholder="Enter name">
+        <input type="text" id="roleInput" placeholder="Enter role">
+        <button onclick="addData()">Add</button>
+    </main>
+
+    
+
+    <footer>
+        <p>© 2025 Bolu Onafeso. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Us</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Welcome to My Website</h1>
+        
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="data.html">CATEGORICAL FIGHTERS</a>
+            <a href="about.html">ABOUT</a>
+            <a href="handlebars.html">HANDLEBARS</a>
+            <a href="commenst.html">COMMENTS</a>
+        </nav>
+    </header>
+    <h2>about us</h2>
+    
+    <h3>leave a comment </h3>
+    <form id="commentForm">
+        <textarea id="commentText" placeholder="Write your comment here..."></textarea>
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <h2>Comments:</h2>
+    <div id="comments-container"></div>
+
+
+    <style>
+        body {
+          font-family: 'Segoe UI', sans-serif;
+         
+          background-color: #f9f9f9;
+          color: #333;
+        }
+      
+        h1 {
+          color: #ffffff;
+        }
+      h2{
+        padding-top: 1%;
+        text-transform: capitalize;
+      }
+        form {
+          margin-top: 20px;
+          margin-bottom: 30px;
+        }
+      
+        textarea {
+          width: 100%;
+          height: 100px;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 1rem;
+          resize: vertical;
+        }
+      
+        button {
+          margin-top: 10px;
+          padding: 10px 18px;
+          background-color: #ff0000;
+          color: #fff;
+          border: none;
+          border-radius: 6px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s ease-in-out;
+        }
+      
+        button:hover {
+          background-color: #000000;
+        }
+      
+        .comment {
+          background-color: #972525;
+          padding: 15px 20px;
+          margin-bottom: 15px;
+          border-radius: 8px;
+          border-left: 4px solid #000000;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+      
+        .comment p:first-child {
+          font-weight: bold;
+          margin-bottom: 6px;
+        }
+      
+        #comments-container {
+          max-width: 700px;
+        }
+      
+        #data-container ul {
+          list-style-type: disc;
+          margin-left: 20px;
+        }
+      
+        #data-container li {
+          padding: 5px 0;
+        }
+      </style>
+      
+
+    <script id="comments-template" type="text/x-handlebars-template">
+        {{#each comments}}
+            <div class="comment">
+                <p><strong>{{this.name}}</strong>:</p>
+                <p>{{this.text}}</p>
+            </div>
+        {{/each}}
+    </script>
+
+
+    <section id="gd">
+      <a href="images/5cc72599c013352e2208d510.webp">
+          <img alt="Photo 1" src="images/5cc72599c013352e2208d510.webp">
+      </a>
+     
+   </section> 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+
+
+
+<footer>
+       
+  <p>© 2025 Bolu Onafeso. All rights reserved.</p>
+</footer>
+</html>
